@@ -1,0 +1,27 @@
+{
+  "name": "trade-journal",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "description": "Self-hosted, offline-first trading journal",
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently -k -n api,web -c blue,magenta \"yarn workspace trade-journal-backend dev\" \"yarn workspace trade-journal-frontend dev\"",
+    "build": "yarn workspace trade-journal-backend build && yarn workspace trade-journal-frontend build",
+    "start": "concurrently -k -n api,web -c blue,magenta \"yarn workspace trade-journal-backend start\" \"yarn workspace trade-journal-frontend preview\"",
+    "seed": "yarn workspace trade-journal-backend seed",
+    "generate:candles": "yarn workspace trade-journal-backend generate:candles",
+    "lint": "yarn workspace trade-journal-frontend lint",
+    "dev:api": "yarn workspace trade-journal-backend dev",
+    "dev:web": "yarn workspace trade-journal-frontend dev"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

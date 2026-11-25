@@ -1,0 +1,21 @@
+# Environment
+.env
+.env.local
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Local data store
+backend/data/
+
+# Candlestick data: only generated synthetic files are committed; any other candle files stay local.
+sample-candlestick-data/**
+!sample-candlestick-data/README.md
+!sample-candlestick-data/.gitkeep
+!sample-candlestick-data/synthetic-*.ohlcv-1m.json
+
+# Logs
+*.log
